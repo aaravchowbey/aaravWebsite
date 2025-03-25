@@ -16,14 +16,15 @@
   
   /* Header */
   header {
-    background: #222;
-    color: #fff;
+    background: #f4f4f4;
+    color: #000000;
     padding: 1.5rem 0;
     text-align: center;
   }
   
   nav a {
-    color: #fff;
+    color: #000000;
+    font-size: 1rem;
     margin: 0 10px;
     text-decoration: none;
   }
