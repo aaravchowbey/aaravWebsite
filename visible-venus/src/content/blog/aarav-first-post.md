@@ -1,5 +1,5 @@
 ---
-title: 'test pots'
+title: 'test post'
 description: 'testing out using md to make a post'
 pubDate: 'Sept 02 2025'
 heroImage: '../../assets/blog-placeholder-3.jpg'
