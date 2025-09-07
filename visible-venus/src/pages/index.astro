@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE, RESUME_URL } from '../consts';
 ---
 
 <!doctype html>
@@ -16,17 +16,14 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			<h1>Hello</h1>
 			<p>
 				Thanks for visiting my website. This is where I share updates on projects that I am working on
-				and my thoughts on various topics. Visit the "Blog" page to see my posts, and the "About" page 
-				to learn more about me. 
+				and my thoughts on various topics. Visit the <a href="/blog">Blog</a> page to see my posts, and the 
+				<a href="/about">About</a> page to learn more about me. If you scroll down, you can see my resume 
+				embedded below. I also have it linked <a href="RESUME_URL" target="_blank">here</a> 
+				so you can download it or view it in a new tab if you'd like.
 			</p>
 
-			<p>
-				I am currently working on adding a resume page, or something that is more focused on my 
-				professional experience and skills. Once that is up I will add a link to it in the header.
-				If you have any suggestions for what to include, please let me know. I am also always available
-				to assist in any way, whether it's related to a project you're working on or just general career 
-				advice. I love teaching, and I would be happy to help out in any way that I can. 
-			</p>
+			<iframe src={RESUME_URL} width="100%" height="600px" style="border: none;"></iframe>
+
 		</main>
 		<Footer />
 	</body>
