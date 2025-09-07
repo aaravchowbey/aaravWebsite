@@ -1,6 +1,6 @@
 ---
 title: 'First Post'
-description: 'Testing out how to make a post'
+description: 'How I decided what to use to build this'
 pubDate: 'Sept 05 2025'
 heroImage: '../../assets/hashtag-one.jpg'
 ---
@@ -16,7 +16,7 @@ I chose to use Astro because it's optimized for content heavy sites and it's rel
 #### My Favorite Astro Features
 - Markdown and MDX support
     - Allows me to import components into Markdown text
-- Framwork agnostic
+- Framework agnostic
     - Through integrations, I can use things like React, Vue, etc.
 - Optimized for content heavy sites
     - Astro renders pages as static HTML by default, and only "hydrates" interactive components when needed
