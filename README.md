@@ -1,7 +1,1 @@
-Framework → Next.js 14
-
-Language → TypeScript
-
-Styling → Tailwind CSS
-
-Content → MDX + Contentlayer
+Personal website/blog built using Astro
