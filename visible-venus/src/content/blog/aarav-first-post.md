@@ -1,7 +1,7 @@
 ---
 title: 'First Post'
 description: 'How I decided what to use to build this'
-pubDate: 'Sept 05 2025'
+pubDate: 'Sept 08 2025'
 heroImage: '../../assets/hashtag-one.jpg'
 ---
 
