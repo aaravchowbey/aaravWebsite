@@ -21,4 +21,4 @@ I chose to use Astro because it's optimized for content heavy sites and it's rel
 - Optimized for content heavy sites
     - Astro renders pages as static HTML by default, and only "hydrates" interactive components when needed
 
-Overall, I think that using Astro will allow me to showcase what I'm doing in a manner that's simple to create and beautiful to view. I would highly recommend Astro to anyone who is new to web development, and wants more than a basic site. I'll be making future posts about how I choose to host the site, any future thoughts on using Astro, and of course any other projects I am working on. 
+Overall, I think that using Astro will allow me to showcase what I'm doing in a manner that's simple to create and beautiful to view. I would highly recommend Astro to anyone who is new to web development and wants more than a basic site. I'll be making future posts about how I choose to host the site, any future thoughts on using Astro, and of course any other projects I am working on. 
