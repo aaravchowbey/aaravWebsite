@@ -5,3 +5,6 @@ pubDate: 'Sept 09 2025'
 heroImage: '../../assets/how-i-host.jpg'
 ---
 
+An explanation on how and why I am self-hosting this site. 
+
+## Self-Host or 
