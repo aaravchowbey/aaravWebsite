@@ -38,3 +38,10 @@ I chose to self-host my website because I already had a home server. I've been s
 I don't reccomend people self-host unless they already have the hardware for it or an interest in that side of the process. Developing a website and using a cloud provider is much easier, and you can avoid a lot of the struggles that self-hosting can cause. My website is not built to handle a lot of concurrent users, and if you expect to scale to a large audience then it's a lot of trouble to self-host for them as wlel. You also have to make sure that you are exposing your website in a secure manner. You don't want to leave unneccesary ports open, and I am not even sure if I am doing everything right. 
 
 ### How I am self-hosting
+I am using cloudflare for my domain name, an Oracle VPS for my public IP, and my home server to host my website static files. I have a wireguard tunnel between my VPS and home server, and I use nginx to direct traffic the 
+
+#### Why do I have a VPS?
+'''
+My ISP uses CGNAT, which means that I don't get a public IP address. To get around this, I use a VPS (Virtual Private Server). Oracle has a free tier that doesn't have a time constraint associated with it. There are a few cloud providers that have free VPS options. I use Oracle because it's free as long as you provision your VPS within certain limits. I know AWS is another popular option, but their free tier only lasts a year. I know that using a VPS goes against the core principle of self-hosting, because I have to rely on a cloud provider. In my case, I keep all of my data on my home server, and only use the VPS for the public IP. I'll be making a detailed post on my home server setup in the future and cover the specifics on my setup. 
+'''
+
