@@ -3,6 +3,14 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE, RESUME_URL } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import ihopPic from '../assets/ihopPic.jpg';
+
+const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const latestPost = posts[0];
 ---
 
 <!doctype html>
@@ -13,14 +21,27 @@ import { SITE_DESCRIPTION, SITE_TITLE, RESUME_URL } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>Aaravchowbey.com</h1>
-			<p>
-				Thanks for visiting my website. This is where I share updates on projects that I am working on
-				and my thoughts on various topics. Visit the <a href="/blog">Blog</a> page to see my posts, and the
-				<a href="/about">About</a> page to learn more about me. If you scroll down, you can see my resume
-				embedded below. I also have it linked <a href={RESUME_URL} target="_blank">here</a>
-				so you can download it or view it in a new tab if you'd like.
-			</p>
+			<section style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2em 1em;">
+				<img src={ihopPic.src} alt="Aarav Chowbey" style="width:300px;height:300px;border-radius:50%;object-fit:cover;box-shadow:0 2px 16px rgba(0,0,0,0.07);margin-bottom:1em;" />
+				<h1 style="margin-bottom:0.2em;">Welcome to my website!</h1>
+				<div style="font-size:1.1em;color:#555;margin-bottom:1.2em;text-align:center;">
+					I use this website to post about the projects I am working on. <br>
+					Check out my latest post below.
+				</div>
+				{latestPost && (
+					<a href={`/blog/${latestPost.id}/`} style="display:block;background:#f1f5f9;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);overflow:hidden;text-decoration:none;color:inherit;max-width:400px;margin:1em auto;">
+						{latestPost.data.heroImage && (
+							<img src={latestPost.data.heroImage.src} alt={latestPost.data.title} style="width:100%;height:200px;object-fit:cover;" />
+						)}
+						<div style="padding:1em;">
+							<div style="font-size:1.1em;font-weight:600;">{latestPost.data.title}</div>
+							<div style="font-size:0.95em;color:#888;">
+								<FormattedDate date={latestPost.data.pubDate} />
+							</div>
+						</div>
+					</a>
+				)}
+			</section>
 
 			<h2>Future Posts</h2>
 			<p>Here are some topics I plan to post about in the future:</p>
@@ -39,9 +60,14 @@ import { SITE_DESCRIPTION, SITE_TITLE, RESUME_URL } from '../consts';
 
 
 			<h3>My Resume</h3>
-			<iframe src={RESUME_URL} width="100%" height="950px" style="border: none;"></iframe>
-
+			<p>
+    			You can view or download my resume by clicking 
+    			<a href={RESUME_URL} target="_blank" rel="noopener" style="color: #0070f3; text-decoration: underline; font-weight: bold;"> 
+					this link
+				</a>.
+			</p>
 		</main>
 		<Footer />
 	</body>
+</html>
 </html>

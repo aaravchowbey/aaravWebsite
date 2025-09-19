@@ -1,40 +1,52 @@
 ---
 import AboutHeroImage from '../assets/aarav-manasi-bmw-carowinds-pic.jpg';
 import Layout from '../layouts/BlogPost.astro';
+import {RESUME_URL } from '../consts';
 ---
 
 <Layout
 	title="About Me"
 	description="About Me"
-	pubDate={new Date('September 04 2025')}
+	pubDate={new Date('September 18 2025')}
 	heroImage={AboutHeroImage}
 >
-	<p>
-		I am currently a Junior at Clemson University studying Computer Science. I'm from the Greenville, SC area, where I lived with 
-		my sister (pictured with me above) and my parents. Before that I have lived in Texas, Louisiana, and Alabama.
-		I have a wide range of interests and I love learning about everything around me. Some of my hobbies include cycling, football, 
-		and working on one of my many half-finished projects. 
-	</p>
+	<h3>Who I Am</h3>
+		<p>
+			I am currently a Junior at Clemson University studying Computer Science. I'm from the Greenville, SC area, where I lived with 
+			my sister (pictured with me above) and my parents. Before that I have lived in Texas, Louisiana, and Alabama.
+			I have a wide range of interests and I love learning about everything around me. Some of my hobbies include cycling, football, 
+			and working on one of my many half-finished projects. 
+		</p>
 
-	<p>
-		I am currently taking Intro to Computer Organizations, Linear Algebra, Computing Ethics, Network
-		programming, and Software Engineering. 
-	</p>
+	<h3>Current Coursework</h3>
+		<p>
+			I am currently taking Intro to Computer Organizations, Linear Algebra, Computing Ethics, Network
+			Programming, and Software Engineering. 
+		</p>
 
-	<p>
-		Apart from school, I am working on a few projects. I am an undergraduate researcher with the 
-		TigerSec lab at Clemson University, where I am improving my embedded systems and C 
-		programming abilities by working with very new microcontrollers. I am also working at 
-		the CCIT helpdesk, where I assist students and faculty with their technical issues. I 
-		have also been focused on applying to jobs lately, and that's been taking up a large
-		chunk of my time. Additionally, I have a home server where I self host things, I'm working on 
-		getting my Network+ certification, and I am always working on some sort of project 
-		involving microcontrollers. 
-	</p>
+	<h3>Projects/Involvements</h3>
+		<p>
+			Apart from school, I am working on a few projects. I am an undergraduate researcher with the 
+			TigerSec lab at Clemson University, where I am improving my embedded systems and C 
+			programming abilities by working with very new microcontrollers. I am also working at 
+			the CCIT helpdesk, where I assist students and faculty with their technical issues. I 
+			have also been focused on applying to jobs lately, and that's been taking up a large
+			chunk of my time. Additionally, I have a home server where I self host things, I'm working on 
+			getting my Network+ certification, and I am always working on some sort of project 
+			involving microcontrollers. 
+		</p>
 
-	<p>
-		I am always available to chat or connect, so feel free to reach out to me on <a href="https://www.linkedin.com/in/aarav-chowbey/" 
-		target="_blank">LinkedIn</a> or via email at <a href="mailto:aaravchowbey@gmail.com">aaravchowbey@gmail.com</a>.
-	</p>
+	<h3>My Resume</h3>
+		<p>
+    		You can view or download my resume by clicking 
+    		<a href={RESUME_URL} target="_blank" rel="noopener" style="color: #0070f3; text-decoration: underline; font-weight: bold;"> 
+				this link
+			</a>.
+		</p>
 
+	<h3>Contact Me</h3>
+		<p>
+			I am always available to chat or connect, so feel free to reach out to me on <a href="https://www.linkedin.com/in/aarav-chowbey/" 
+			target="_blank">LinkedIn</a> or via email at <a href="mailto:aaravchowbey@gmail.com">aaravchowbey@gmail.com</a>.
+		</p>
 </Layout>

@@ -30,4 +30,5 @@ I won’t go into all the technical details here, but I plan to write more about
 ##### Why Use a VPS?
 My internet provider uses CGNAT (Carrier-Grade NAT), which means I don’t get a public IP address at my apartment. To work around this, I use a VPS. I chose to go with Oracle’s free tier, which doesn’t expire as long as you stay within certain limits. Other providers like AWS offer free VPS options, but those are usually time-limited. While relying on a VPS isn’t pure self-hosting, I keep all my data on my home server and use the VPS only for its public IP.
 
+##### Questions?
 I’ll share more details about my home server setup in a future post. If you have questions or want to try self-hosting yourself, feel free to reach out!
