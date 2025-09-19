@@ -13,16 +13,25 @@ import { SITE_DESCRIPTION, SITE_TITLE, RESUME_URL } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>Hello</h1>
+			<h1>Aaravchowbey.com</h1>
 			<p>
 				Thanks for visiting my website. This is where I share updates on projects that I am working on
-				and my thoughts on various topics. Visit the <a href="/blog">Blog</a> page to see my posts, and the 
-				<a href="/about">About</a> page to learn more about me. If you scroll down, you can see my resume 
-				embedded below. I also have it linked <a href="RESUME_URL" target="_blank">here</a> 
+				and my thoughts on various topics. Visit the <a href="/blog">Blog</a> page to see my posts, and the
+				<a href="/about">About</a> page to learn more about me. If you scroll down, you can see my resume
+				embedded below. I also have it linked <a href={RESUME_URL} target="_blank">here</a>
 				so you can download it or view it in a new tab if you'd like.
 			</p>
 
-			<iframe src={RESUME_URL} width="100%" height="600px" style="border: none;"></iframe>
+			<h2>Future Posts</h2>
+			<p>
+				In the future I plan on making posts about my CI/CD for this site, a detailed explanation of my server setup, a DIY macropad I made, a e-bike conversion kit I made a couple of years ago,
+				a remotely controlled car I could drive around from a different state, a project I am working on now for the SPARK program, and a car mount for a Tempest weather station. Let me know if 
+				there is anything else you would like to see or if any of the topics I plan to post about are relevant to you. I would be happy to answer any questions you have.
+			</p>
+
+
+			<h3>My Resume</h3>
+			<iframe src={RESUME_URL} width="100%" height="950px" style="border: none;"></iframe>
 
 		</main>
 		<Footer />
