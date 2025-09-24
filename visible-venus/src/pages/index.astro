@@ -6,6 +6,7 @@ import { SITE_DESCRIPTION, SITE_TITLE, RESUME_URL } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import ihopPic from '../assets/ihopPic.jpg';
+import { Icon } from 'astro-icon/components';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -39,49 +40,33 @@ const latestPost = posts[0];
       <!-- Skills -->
       <section style="max-width:940px;margin:0 auto 2.2em;padding:0 1.2em;">
         <h2 style="margin:0 0 .6em;font-size:2rem;">Skills</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.9em;font-size:.9rem;line-height:1.4;">
-          <div style="background:#f8fafc;padding:.85em .9em;border-radius:8px;">
-            <strong>Languages</strong><br/>C, Python, Java, C++, JavaScript, Bash
-          </div>
-            <div style="background:#f8fafc;padding:.85em .9em;border-radius:8px;">
-            <strong>Systems / Embedded</strong><br/>Microcontrollers, Low-level debugging, Linux
-          </div>
-          <div style="background:#f8fafc;padding:.85em .9em;border-radius:8px;">
-            <strong>Networking</strong><br/>Fundamentals, Troubleshooting, Self-hosting
-          </div>
-          <div style="background:#f8fafc;padding:.85em .9em;border-radius:8px;">
-            <strong>Tools</strong><br/>Git, (Add: Docker, Wireshark if used)
-          </div>
-          <div style="background:#f8fafc;padding:.85em .9em;border-radius:8px;">
-            <strong>Web / Platform</strong><br/>Astro, Node.js, Basic CI/CD
-          </div>
-          <div style="background:#f8fafc;padding:.85em .9em;border-radius:8px;">
-            <strong>In Progress</strong><br/>Network+ prep, deeper embedded tooling
-          </div>
+
+        <div class="skills-icons">
+          <figure class="skill"><Icon name="skill-icons:python-light" width="32" height="32" /><figcaption>Python</figcaption></figure>
+          <figure class="skill"><Icon name="skill-icons:java-light" width="32" height="32" /><figcaption>Java</figcaption></figure>
+          <figure class="skill"><Icon name="skill-icons:javascript" width="32" height="32" /><figcaption>JavaScript</figcaption></figure>
+          <figure class="skill"><Icon name="skill-icons:html" width="32" height="32" /><figcaption>HTML5</figcaption></figure>
+		  <figure class="skill"><Icon name="skill-icons:cpp" width="32" height="32" /><figcaption>C++</figcaption></figure>
+          <figure class="skill"><Icon name="skill-icons:c" width="32" height="32" /><figcaption>C</figcaption></figure>
+          <figure class="skill"><Icon name="skill-icons:css" width="32" height="32" /><figcaption>CSS3</figcaption></figure>
+          <figure class="skill"><Icon name="skill-icons:bash-light" width="32" height="32" /><figcaption>Bash</figcaption></figure>
+          <figure class="skill"><Icon name="skill-icons:linux-light" width="32" height="32" /><figcaption>Linux</figcaption></figure>
+          <figure class="skill"><Icon name="skill-icons:aws-light" width="32" height="32" /><figcaption>AWS</figcaption></figure>
+          <figure class="skill"><Icon name="skill-icons:git" width="32" height="32" /><figcaption>Git</figcaption></figure>
+          <figure class="skill"><Icon name="skill-icons:docker" width="32" height="32" /><figcaption>Docker</figcaption></figure>
+          <figure class="skill"><Icon name="skill-icons:vscode-light" width="32" height="32" /><figcaption>VS Code</figcaption></figure>
         </div>
+
+        <style>
+          .skills-icons{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;}
+          .skill{display:flex;flex-direction:column;align-items:center;gap:8px;background:#f8fafc;border-radius:10px;padding:14px 10px;}
+          .skill [data-icon]{color:#0f172a;width:32px;height:32px;transition:transform .15s ease,color .15s ease;}
+          .skill:hover [data-icon]{transform:scale(1.08);color:#2563eb;}
+          .skill figcaption{font-size:.85rem;color:#111;}
+        </style>
       </section>
 
-      <!-- Featured Projects -->
-      <section style="max-width:940px;margin:0 auto 2.4em;padding:0 1.2em;">
-        <h2 style="margin:0 0 .6em;font-size:2rem;">Featured Projects</h2>
-        <div style="display:grid;gap:1em;">
-          <div style="background:#e2e8f0;padding:1em 1.1em;border-radius:10px;">
-            <strong>DIY Macropad</strong> – Cu
-			stom PCB + firmware; streamlined repetitive workflow inputs. <em>Tech:</em> C, Microcontroller (add model)
-          </div>
-          <div style="background:#e2e8f0;padding:1em 1.1em;border-radius:10px;">
-            <strong>Self-Hosted Server Stack</strong> – Hosting services (list a couple) for learning deployment, backups, and networking. <em>Tech:</em> Linux, (add services)
-          </div>
-          <div style="background:#e2e8f0;padding:1em 1.1em;border-radius:10px;">
-            <strong>Remote-Control Car</strong> – Internet-controlled vehicle; focus on latency + reliability. <em>Tech:</em> (Add protocols / boards)
-          </div>
-        </div>
-<!--         <div style="margin-top:.7em;font-size:.85rem;">
-          <a href="/blog" style="text-decoration:underline;color:#2563eb;">Some projects will be documented on the blog →</a>
-        </div> -->
-      </section>
-
-      <!-- Experience & Involvement -->
+	   <!-- Experience & Involvement -->
       <section style="max-width:940px;margin:0 auto 2.4em;padding:0 1.2em;">
         <h2 style="margin:0 0 .6em;font-size:2rem;">Experience & Involvement</h2>
         <ul style="margin:0;padding-left:1.1em;line-height:1.55;font-size:1rem;">
@@ -91,6 +76,22 @@ const latestPost = posts[0];
           <li><strong>Home Lab</strong> – Self-hosting services, experimenting with automation + networking.</li>
         </ul>
       </section>
+
+      <!-- Featured Projects -->
+      <!-- <section style="max-width:940px;margin:0 auto 2.4em;padding:0 1.2em;">
+        <h2 style="margin:0 0 .6em;font-size:2rem;">Featured Projects</h2>
+        <div style="display:grid;gap:1em;">
+          <div style="background:#e2e8f0;padding:1em 1.1em;border-radius:10px;">
+            <strong>DIY Macropad</strong> - Custom PCB + firmware; streamlined repetitive workflow inputs. <em>Tech:</em> C, Microcontroller (add model)
+          </div>
+          <div style="background:#e2e8f0;padding:1em 1.1em;border-radius:10px;">
+            <strong>Self-Hosted Server Stack</strong> - Hosting services (list a couple) for learning deployment, backups, and networking. <em>Tech:</em> Linux, (add services)
+          </div>
+          <div style="background:#e2e8f0;padding:1em 1.1em;border-radius:10px;">
+            <strong>Remote-Control Car</strong> - Internet-controlled vehicle; focus on latency + reliability. <em>Tech:</em> (Add protocols / boards)
+          </div>
+        </div>
+      </section> -->
 
       <!-- Latest Blog Post -->
       {latestPost && (
@@ -114,6 +115,7 @@ const latestPost = posts[0];
       )}
 
       <!-- Contact -->
+	  <!-- Want to add a contact box where you can fill out name, email, and info in box and send it off. -->
       <section style="max-width:860px;margin:0 auto 3em;padding:0 1.2em;text-align:center;">
         <h2 style="margin:0 0 .6em;font-size:1.5rem;">Get In Touch</h2>
         <p style="max-width:600px;margin:0 auto 1em;line-height:1.5;color:#444;font-size:.95rem;">
