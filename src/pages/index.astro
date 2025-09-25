@@ -1,0 +1,197 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE, RESUME_URL } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import ihopPic from '../assets/ihopPic.jpg';
+import { Icon } from 'astro-icon/components';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const latestPost = posts[0];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	<!-- Added styles for the skills grid -->
+	<style>
+		/* Skills section layout */
+		.skills-section {
+			max-width:940px;
+			margin:0 auto 2.4em;
+			padding:0 1.2em;
+		}
+		.skills-section h2 {
+			margin:0 0 .6em;
+			font-size:2rem;
+			text-align:left;
+		}
+		.skills-grid {
+			display:grid;
+			grid-template-columns:repeat(auto-fit, minmax(96px, 1fr));
+			gap:.85rem;
+			align-items:center;
+		}
+		.skill-card {
+			display:flex;
+			flex-direction:column;
+			align-items:center;
+			justify-content:center;
+			padding:.6rem;
+			background:#fff;
+			border-radius:10px;
+			box-shadow:0 2px 8px rgba(0,0,0,.04);
+			min-height:110px;
+		}
+		.skill-icon {
+			width:56px;
+			height:56px;
+			display:block;
+		}
+		.skill-label {
+			margin-top:.45rem;
+			font-size:.85rem;
+			color:#222;
+			font-weight:600;
+			text-align:center;
+		}
+		@media (max-width:520px) {
+			.skill-card { min-height:90px; padding:.5rem; }
+			.skill-icon { width:48px; height:48px; }
+		}
+	</style>
+  </head>
+  <body>
+    <Header />
+    <main>
+    	<!-- Hero / Intro -->
+    	<section style="max-width:860px;margin:0 auto;padding:2.8em 1.2em 2em;display:flex;flex-direction:column;align-items:center;text-align:center;">
+    		<img src={ihopPic.src} alt="Photo of Aarav Chowbey" style="width:300px;height:300px;border-radius:50%;object-fit:cover;box-shadow:0 4px 18px rgba(0,0,0,.10);margin-bottom:1.2em;" />
+    		<h1 style="font-size:4rem;margin:.1em 0 .35em;">Aarav Chowbey</h1>
+    		<p style="max-width:640px;font-size:1.05rem;line-height:1.55;color:#444;margin:0 0 1.1em;">
+        		Computer Science student focused on embedded systems, networking, and practical systems projects. I like building things that interact with hardware, automate tasks, or make infrastructure more reliable.
+    		</p>
+    		<div style="display:flex;flex-wrap:wrap;gap:.75em;justify-content:center;">
+        		<a href={RESUME_URL} target="_blank" rel="noopener" style="background:#2563eb;color:#fff;padding:.65em 1.15em;border-radius:7px;text-decoration:none;font-weight:600;font-size:.95rem;">Resume</a>
+        		<a href="https://www.linkedin.com/in/aarav-chowbey/" target="_blank" rel="noopener" style="background:#e2e8f0;color:#111;padding:.65em 1.15em;border-radius:7px;text-decoration:none;font-weight:500;font-size:.95rem;">LinkedIn</a>
+        		<a href="/about" style="background:#f1f5f9;color:#111;padding:.65em 1.15em;border-radius:7px;text-decoration:none;font-size:.95rem;">About</a>
+        		<a href="/blog" style="background:#f8fafc;color:#111;padding:.65em 1.15em;border-radius:7px;text-decoration:none;font-size:.95rem;">Blog</a>
+    		</div>
+    	</section>
+
+   		<!-- Skills -->
+		<section class="skills-section">
+  			<h2>Skills</h2>
+  			<div class="skills-grid">
+				<div class="skill-card">
+					<Icon name="skill-icons:python-light" class="skill-icon" />
+					<div class="skill-label">Python</div>
+				</div>
+				<div class="skill-card">
+					<Icon name="skill-icons:java-light" class="skill-icon" />
+					<div class="skill-label">Java</div>
+				</div>
+				<div class="skill-card">
+					<Icon name="skill-icons:javascript" class="skill-icon" />
+					<div class="skill-label">JavaScript</div>
+				</div>
+				<div class="skill-card">
+					<Icon name="skill-icons:html" class="skill-icon" />
+					<div class="skill-label">HTML</div>
+				</div>
+				<div class="skill-card">
+					<Icon name="skill-icons:cpp" class="skill-icon" />
+					<div class="skill-label">C++</div>
+				</div>
+				<div class="skill-card">
+					<Icon name="skill-icons:c" class="skill-icon" />
+					<div class="skill-label">C</div>
+				</div>
+				<div class="skill-card">
+					<Icon name="skill-icons:css" class="skill-icon" />
+					<div class="skill-label">CSS</div>
+				</div>
+				<div class="skill-card">
+					<Icon name="skill-icons:bash-light" class="skill-icon" />
+					<div class="skill-label">Bash</div>
+				</div>
+				<div class="skill-card">
+					<Icon name="skill-icons:linux-light" class="skill-icon" />
+					<div class="skill-label">Linux</div>
+				</div>
+				<div class="skill-card">
+					<Icon name="skill-icons:aws-light" class="skill-icon" />
+					<div class="skill-label">AWS</div>
+				</div>
+				<div class="skill-card">
+					<Icon name="skill-icons:git" class="skill-icon" />
+					<div class="skill-label">Git</div>
+				</div>
+				<div class="skill-card">
+					<Icon name="skill-icons:docker" class="skill-icon" />
+					<div class="skill-label">Docker</div>
+				</div>
+				<div class="skill-card">
+					<Icon name="skill-icons:vscode-light" class="skill-icon" />
+					<div class="skill-label">VS Code</div>
+				</div>
+  			</div>
+		</section>
+
+
+    	<!-- Featured Projects -->
+    	<!-- <section style="max-width:940px;margin:0 auto 2.4em;padding:0 1.2em;">
+    	<h2 style="margin:0 0 .6em;font-size:2rem;">Featured Projects</h2>
+    	<div style="display:grid;gap:1em;">
+        	<div style="background:#e2e8f0;padding:1em 1.1em;border-radius:10px;">
+            <strong>DIY Macropad</strong> - Custom PCB + firmware; streamlined repetitive workflow inputs. <em>Tech:</em> C, Microcontroller (add model)
+        	</div>
+        	<div style="background:#e2e8f0;padding:1em 1.1em;border-radius:10px;">
+        	<strong>Self-Hosted Server Stack</strong> - Hosting services (list a couple) for learning deployment, backups, and networking. <em>Tech:</em> Linux, (add services)
+        	</div>
+        	<div style="background:#e2e8f0;padding:1em 1.1em;border-radius:10px;">
+        		<strong>Remote-Control Car</strong> - Internet-controlled vehicle; focus on latency + reliability. <em>Tech:</em> (Add protocols / boards)
+        	</div>
+    	</div>
+    	</section> -->
+
+    	<!-- Latest Blog Post -->
+    	{latestPost && (
+    	<section style="max-width:940px;margin:0 auto 2.6em;padding:0 1.2em;">
+        	<h2 style="margin:0 0 .6em;font-size:2rem;">Latest Blog Post</h2>
+        	<a href={`/blog/${latestPost.id}/`} style="display:block;background:#f1f5f9;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.06);overflow:hidden;text-decoration:none;color:inherit;">
+        	{latestPost.data.heroImage && (
+            	<img src={latestPost.data.heroImage.src} alt={latestPost.data.title} style="width:100%;height:auto;object-fit:contain;" />
+        	)}
+        	<div style="padding:1em 1.1em;">
+            	<div style="font-size:1.05rem;font-weight:600;margin-bottom:.25em;">{latestPost.data.title}</div>
+            	<div style="font-size:.8rem;color:#666;">
+            	<FormattedDate date={latestPost.data.pubDate} />
+            	</div>
+            </div>
+        	</a>
+    	</section>
+    	)}
+
+    	<!-- Contact -->
+		<!-- Want to add a contact box where you can fill out name, email, and info in box and send it off. -->
+    	<section style="max-width:860px;margin:0 auto 3em;padding:0 1.2em;text-align:center;">
+        	<h2 style="margin:0 0 .6em;font-size:1.5rem;">Get In Touch</h2>
+        	<p style="max-width:600px;margin:0 auto 1em;line-height:1.5;color:#444;font-size:.95rem;">
+        		Open to internships, collaboration, and interesting technical projects. Feel free to reach out.
+    		</p>
+    		<p style="font-size:.95rem;">
+        		<a href="mailto:aaravchowbey@gmail.com" style="color:#2563eb;text-decoration:underline;">Email</a> ·
+        		<a href="https://www.linkedin.com/in/aarav-chowbey/" target="_blank" rel="noopener" style="color:#2563eb;text-decoration:underline;">LinkedIn</a>
+    		</p>
+    	</section>
+
+    </main>
+    <Footer />
+  </body>
+</html>
