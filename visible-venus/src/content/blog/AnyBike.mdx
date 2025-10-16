@@ -1,11 +1,18 @@
+
 ---
 title: 'AnyBike'
 description: 'An e-bike conversion kit I designed for the SPARK competition'
 pubDate: 'Oct 16 2025'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/AnyBikeHeroImage.png'
 ---
+import scooterWiring from '../../assets/scooterWiring.jpg';
+import motor1 from '../../assets/motor1.png';
+import motor2 from '../../assets/motor2.png';
+import motorOnFrame from '../../assets/motorOnBikeFrame.png';
+import anyBikeSketch from '../../assets/anyBikeSketch.jpg';
+import finalProduct from '../../assets/lightseyPicOfFinalPrototype.jpg';
 
-In this post, I’ll talk about a project I made my freshman year of college with my roommate Life Rouby. It was an e-bike conversion kit that we made for the SPARK competition. 
+In this post, I'll talk about a project I made my freshman year of college with my roommate Life Rouby. It was an e-bike conversion kit that we made for the SPARK competition. 
 
 ## What is SPARK?
 SPARK is a year-long program at Clemson that helps students turn ideas into viable businesses. They teach pitch development, market research, and prototyping. Each week, participants meet to gain feedback on their pitches and share progress. It all concludes with a competition in March where teams compete to see who has the best pitch.
@@ -16,17 +23,43 @@ AnyBike was an e-bike conversion kit that was designed to turn *any bike* into a
 The final design was using a friction-drive motor mounted near the rear wheel, a battery under the top tube, and a wireless throttle on the handlebars. It could be installed or removed in minutes while staying affordable. 
 
 ## Design Iterations / Timeline
+
+### Initial Idea
 The first prototype attempted to use parts from an old electric scooter. I wanted to try and use the motor to create a hub-style e-bike.
 
-*insert pic of scooter wiring diagram*
+<figure style={{ textAlign: 'center' }}>
+  <img src={scooterWiring.src} alt="Labeled battery, ESC, brake, charger, and throttle/screen wires." />
+  <figcaption>Labeled wires from the scooter.</figcaption>
+</figure>
+<br/>
 
+### Switching to Friction Drive
 That did not end up working well at all, so I utilized SPARK seed funding to purchase electric scooter components. I had decided on doing some sort of friction drive at this point, so most design efforts were focused on how we would mount the motor. We knew that we were going to use a wireless throttle, and that the battery was going to be under the top tube. The motor had a few options, and we decided to put it against the seat tube and the rear wheel. That way the motor would have enough leverage to be able to provide power to the rear wheel. 
 
-*maybe some pics of the CADS, caption like "Here are some pics of designs we used for our prototype. We printed in PLA, which in hindsight was not a great idea. "*
 
-We finished assembling at 2 am the day of our presentation. It wasn’t pretty, but it functioned, and we could reduce pedaling effort by around 20%. 
+<figure style={{ textAlign: 'center' }}>
+  <img src={anyBikeSketch.src} />
+  <figcaption>Some initial sketches of the AnyBike design.</figcaption>
+</figure>
+<figure style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+  <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+    <img src={motor1.src} style={{ maxWidth: '200px', height: 'auto', borderRadius: '8px' }} />
+    <img src={motor2.src} style={{ maxWidth: '200px', height: 'auto', borderRadius: '8px' }} />
+    <img src={motorOnFrame.src} style={{ maxWidth: '200px', height: 'auto', borderRadius: '8px' }} />
+  </div>
+  <figcaption style={{ marginTop: '0.5em' }}>
+    CAD images showing two views of the motor and where it would fit on the bike.
+  </figcaption>
+</figure>
 
-*insert pic of final product and video of pedaling*
+### Final Prototype
+We finished assembling at 2 am the day of our presentation. It wasn't pretty, but it functioned, and we could reduce pedaling effort by around 20%. 
+
+<figure style={{ textAlign: 'center' }}>
+  <img src={finalProduct.src} />
+  <figcaption>Our final prototype, finished at 2 am the day of our presentation.</figcaption>
+</figure>
+<br/>
 
 Our final prototype used ratchet straps to mount the battery, a 3D printed motor mount, and a wireless throttle. Lots of design improvements came to mind, but time ended up as our biggest constraint. 
 
