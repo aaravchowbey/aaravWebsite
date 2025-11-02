@@ -1,0 +1,59 @@
+---
+title: 'DIY Smart Lamp Conversion'
+description: 'How I converted a regular lamp into a smart lamp for my Home Assistant setup'
+pubDate: 'Nov 2 2025'
+heroImage: '../../assets/blog-placeholder-2.jpg'
+---
+import final-result from '../../assets/lampConversionPics/final-result.jpg';
+import LED-panel-close-up from '../../assets/lampConversionPics/LED-panel-close-up.jpeg';
+import LED-panel-removed from '../../assets/lampConversionPics/LED-panel-removed.jpg';
+import LED-panel-removed-wiring from '../../assets/lampConversionPics/LED-panel-removed-wiring.jpg';
+import shelly-close-up from '../../assets/lampConversionPics/shelly-close-up.jpeg';
+import old-control-board-3 from '../../assets/lampConversionPics/old-control-board-3.jpg';
+import old-control-board-4 from '../../assets/lampConversionPics/old-control-board-4.jpg';
+
+In this post, I'll talk about how I converted a lamp I had bought from Walmart into a smart lamp compatible with my Home Assistant setup. 
+
+## Why I Did It
+My room felt too dark, so I wanted to add another light that could be controlled through Home Assistant alongside my ceiling and desk lights. I picked out a torchiere-style lamp from Walmart and assumed a smart plug would make it controllable.
+
+That was my first mistake. 
+
+I failed to realize that the lamp used an electronic switch rather than a manual one. That meant that the smart plug could only turn the lamp off, and not back on. Rather than returning the lamp, I made my second mistake and decided to use it as-is for a while. 
+
+## What I wanted
+Having one “dumb” light among my smart lights eventually bothered me enough to fix it. I wanted the lamp to be fully integrated into Home Assistant, and participate in my morning automation routine where all my lights turn on to help me wake up.
+
+## The Solution
+I began looking for ways to convert my lamp into a smart device, and I discovered the [Shelly Plus RGBW PM](https://www.amazon.com/dp/B0CXN2B9RS?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1), a device that is able to replace the existing control board with an ESP to give it Wi-Fi and Bluetooth connections. This particular device was designed for RGBW LEDs, so it wouldn't require any programming or soldering to integrate into my current lamp. 
+
+To install it, I opened the lamp, desoldered the original relay, and wired the Shelly in its place. To secure it, I used a generous amount of painter's tape around the lamp pole. After that, I just had to use the Shelly app to get the ESP onto my WiFi network, and then Home Assistant was automatically able to detect it. 
+
+<figure style={{ textAlign: 'center' }}>
+  <img src={final-result.src} />
+  <figcaption>Some initial sketches of the AnyBike design.</figcaption>
+</figure>
+
+<figure style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+  <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+    <img src={shelly-close-up.src} style={{ maxWidth: '200px', height: 'auto', borderRadius: '8px' }} />
+    <img src={old-control-board-3.src} style={{ maxWidth: '200px', height: 'auto', borderRadius: '8px' }} />
+    <img src={old-control-board-4.src} style={{ maxWidth: '200px', height: 'auto', borderRadius: '8px' }} />
+  </div>
+  <figcaption style={{ marginTop: '0.5em' }}>
+    CAD images showing two views of the motor and where it would fit on the bike.
+  </figcaption>
+</figure>
+
+## Results
+I now have a lamp that definitely looks pretty sketchy, but functions exactly how I would want it to. I can fully control it from my Home Assistant, and I have even have more customization options on the colors and brightness of the light. The most important feature however, is that it turns on with the rest of my lights in the morning to help me wake up. 
+
+It's a small change, but it makes my smart room setup feel a bit smoother. I also learned to double-check how a lamp works before assuming a smart plug will handle it. 
+
+## Conclusion
+[Lamp on Walmart](https://www.walmart.com/ip/Simplee-Adesso-Brand-RGB-Black-Floor-Lamp-6-Different-Automatic-Color-Change-Modern-Design-New/5675778339)
+[Shelly Plus RGBW PM on Amazon](https://www.amazon.com/dp/B0CXN2B9RS?ref=ppx_yo2ov_dt_b_fed_asin_title)
+> I bought the Shelly on Prime Day for about \$25, down from the usual \$32.
+
+
+If you're thinking about doing something similar, feel free to reach out.

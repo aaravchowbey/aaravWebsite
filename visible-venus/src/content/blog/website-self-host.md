@@ -2,7 +2,7 @@
 title: 'How I host this website'
 description: 'An explanation on why and how I am self-hosting this site.'
 pubDate: 'Sept 18 2025'
-heroImage: '../../assets/how-i-host.jpg'
+heroImage: '../../assets/website-self-host/how-i-host.jpg'
 ---
 
 In this post, I’ll share why I chose to self-host my site and how I set it up. This isn’t a step-by-step guide, but feel free to reach out if you're exploring something similar.
@@ -25,7 +25,7 @@ Here’s a quick overview of my setup:
 
 I won’t go into all the technical details here, but I plan to write more about my home server setup soon.
 
-![User to Cloudflare to Oracle to Home Server to Ubuntu VM](../../assets/how-i-host-diagram.jpg "Diagram showing flow of traffic")
+![User to Cloudflare to Oracle to Home Server to Ubuntu VM](../../assets/website-self-host/how-i-host-diagram.jpg "Diagram showing flow of traffic")
 
 ##### Why Use a VPS?
 My internet provider uses CGNAT (Carrier-Grade NAT), which means I don’t get a public IP address at my apartment. To work around this, I use a VPS. I chose to go with Oracle’s free tier, which doesn’t expire as long as you stay within certain limits. Other providers like AWS offer free VPS options, but those are usually time-limited. While relying on a VPS isn’t pure self-hosting, I keep all my data on my home server and use the VPS only for its public IP.
