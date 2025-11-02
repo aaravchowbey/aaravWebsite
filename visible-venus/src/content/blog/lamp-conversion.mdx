@@ -2,15 +2,15 @@
 title: 'DIY Smart Lamp Conversion'
 description: 'How I converted a regular lamp into a smart lamp for my Home Assistant setup'
 pubDate: 'Nov 2 2025'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/lampConversionPics/lampConversionHeroImage.png'
 ---
-import final-result from '../../assets/lampConversionPics/final-result.jpg';
-import LED-panel-close-up from '../../assets/lampConversionPics/LED-panel-close-up.jpeg';
-import LED-panel-removed from '../../assets/lampConversionPics/LED-panel-removed.jpg';
-import LED-panel-removed-wiring from '../../assets/lampConversionPics/LED-panel-removed-wiring.jpg';
-import shelly-close-up from '../../assets/lampConversionPics/shelly-close-up.jpeg';
-import old-control-board-3 from '../../assets/lampConversionPics/old-control-board-3.jpg';
-import old-control-board-4 from '../../assets/lampConversionPics/old-control-board-4.jpg';
+import finalResult from '../../assets/lampConversionPics/finalResult.jpg';
+import LEDPanelCloseUp from '../../assets/lampConversionPics/LEDPanelCloseUp.jpeg';
+import LEDPanelRemoved from '../../assets/lampConversionPics/LEDPanelRemoved.jpg';
+import LEDPanelRemovedWiring from '../../assets/lampConversionPics/LEDPanelRemovedWiring.jpg';
+import ShellyCloseUp from '../../assets/lampConversionPics/ShellyCloseUp.jpeg';
+import OldControlBoard3 from '../../assets/lampConversionPics/OldControlBoard3.jpg';
+import OldControlBoard4 from '../../assets/lampConversionPics/OldControlBoard4.jpg';
 
 In this post, I'll talk about how I converted a lamp I had bought from Walmart into a smart lamp compatible with my Home Assistant setup. 
 
@@ -29,20 +29,22 @@ I began looking for ways to convert my lamp into a smart device, and I discovere
 
 To install it, I opened the lamp, desoldered the original relay, and wired the Shelly in its place. To secure it, I used a generous amount of painter's tape around the lamp pole. After that, I just had to use the Shelly app to get the ESP onto my WiFi network, and then Home Assistant was automatically able to detect it. 
 
-<figure style={{ textAlign: 'center' }}>
-  <img src={final-result.src} />
-  <figcaption>Some initial sketches of the AnyBike design.</figcaption>
-</figure>
+
 
 <figure style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
   <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-    <img src={shelly-close-up.src} style={{ maxWidth: '200px', height: 'auto', borderRadius: '8px' }} />
-    <img src={old-control-board-3.src} style={{ maxWidth: '200px', height: 'auto', borderRadius: '8px' }} />
-    <img src={old-control-board-4.src} style={{ maxWidth: '200px', height: 'auto', borderRadius: '8px' }} />
+    <img src={ShellyCloseUp.src} style={{ maxWidth: '300px', height: 'auto', borderRadius: '8px' }} />
+    <img src={OldControlBoard3.src} style={{ maxWidth: '300px', height: 'auto', borderRadius: '8px' }} />
+    <img src={OldControlBoard4.src} style={{ maxWidth: '300px', height: 'auto', borderRadius: '8px' }} />
   </div>
   <figcaption style={{ marginTop: '0.5em' }}>
-    CAD images showing two views of the motor and where it would fit on the bike.
+    A close up of the Shelly and the previous control board.
   </figcaption>
+</figure>
+
+<figure style={{ textAlign: 'center' }}>
+  <img src={finalResult.src} style={{ maxWidth: '400px', width: '100%', height: 'auto', borderRadius: '8px' }} />
+  <figcaption>The final result of the lamp conversion.</figcaption>
 </figure>
 
 ## Results
@@ -52,8 +54,8 @@ It's a small change, but it makes my smart room setup feel a bit smoother. I als
 
 ## Conclusion
 [Lamp on Walmart](https://www.walmart.com/ip/Simplee-Adesso-Brand-RGB-Black-Floor-Lamp-6-Different-Automatic-Color-Change-Modern-Design-New/5675778339)
-[Shelly Plus RGBW PM on Amazon](https://www.amazon.com/dp/B0CXN2B9RS?ref=ppx_yo2ov_dt_b_fed_asin_title)
-> I bought the Shelly on Prime Day for about \$25, down from the usual \$32.
+<br />[Shelly Plus RGBW PM on Amazon](https://www.amazon.com/dp/B0CXN2B9RS?ref=ppx_yo2ov_dt_b_fed_asin_title) 
+<br />Note: I bought the Shelly on Prime Day for about \$25, down from the usual \$32.
 
 
 If you're thinking about doing something similar, feel free to reach out.
